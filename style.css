@@ -1,0 +1,68 @@
+/*Os itens abaixo correspondem a estilização do catalogo de ONGs*/
+
+#catalogoOngs{
+    position: absolute;
+    left: 25%;
+}
+
+.hidden {
+    display: none;
+}
+.details-row {
+    background-color: #f9f9f9;
+}
+
+table{
+    display: flex;
+    width: 80%;
+}
+
+tbody{
+    display: inline;
+    height: 50%;
+}
+
+tr{
+    height: 100%;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+td{
+    width: 200px;
+    max-width: 400px;
+}
+
+#logo{
+    position: absolute;
+    left: 78%;
+    top: -2%;
+    width: 20%;
+    height: 8%;
+    background-color: #cffccf;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+#search{
+    position: absolute;
+    left: 25%;
+    top: 8%;
+}
+
+/*Os itens abaixo sao para a estilização do menu*/
+
+#menu{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 25px;
+    width: 20%;
+    height: 100%;
+    background-color: #cffccf;
+}
