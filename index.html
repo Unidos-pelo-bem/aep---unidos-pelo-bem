@@ -13,7 +13,7 @@
         <button>Cadastre-se</button><br>
         <h3>Filtrar ></h3><br>
         <h3>Pesquisar ></h3><br>
-        <button>Adicionar ONG</button><br>
+        <button onclick="openModal()">Adicionar ONG</button><br>
         <h3>Mais informações ></h3><br>
         <h5>Detalhes</h5>
 
@@ -23,7 +23,7 @@
 
     <div id="catalogoOngs">
         <table>
-            <tbody>
+            <tbody id="listagem">
                 <tr onclick="mostrarDetalhes(this)">
                     <td colspan="3">Médicos sem fronteiras</td><br>
                     <td colspan="3">Serviços de apoio médico</td><br>
@@ -39,6 +39,32 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+
+    <div class="janela-modal">
+        <div class="modal">
+            <dialog id="modalAdicionarItens">
+                <div id="formHeading">
+                    <h1>Adicionar ONG ao catálogo</h1><br>
+                </div>
+                <button id="botao-fechar">X</button><br><br>
+                
+                <input type="text" id="nome" placeholder="Nome"><br><br>
+                
+                <input type="text" id="ramo" placeholder="Ramo de Atuação"><br><br>
+                
+                <input type="text" id="descricao" placeholder="Descrição"><br><br>
+                
+                <input type="text" id="imagem" placeholder="URL da Imagem"><br><br>
+                
+                <input type="text" id="registro" placeholder="Registro legal"><br><br>
+                
+                <input type="text" id="CNPJ" placeholder="CNPJ da ONG"><br><br>
+                <button onclick="create()">Adicionar</button>
+                <button onclick="limpar()">Limpar</button>
+            </dialog>
+        </div>
     </div>
 
     <script src="script.js"></script>
