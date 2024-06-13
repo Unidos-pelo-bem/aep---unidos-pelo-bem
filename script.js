@@ -45,6 +45,7 @@ function validarForm() {
     let ramo = document.getElementById('ramo').value;
     let caminhoImagem = document.getElementById('imagem').value;
     let registro = document.getElementById('registro').value;
+    let cnpj = document.getElementById('cnpj').value;
 
 
     if (!nome || !ramo || !caminhoImagem || !registro || !cnpj) {
@@ -61,6 +62,7 @@ function create() {
         let descricao = document.getElementById('descricao').value;
         let caminhoImagem = document.getElementById('imagem').value;
         let registro = document.getElementById('registro').value;
+        let cnpj = document.getElementById('cnpj').value;
 
 
         //pergunta para o array se existe um obj extritamente igual ao item do input
@@ -77,9 +79,9 @@ function create() {
         );
 
         if (indiceExistente >= 0) {
-            listaDeOngs[indiceExistente] = { nome, ramo, caminhoImagem, descricao, registro };
+            listaDeOngs[indiceExistente] = { nome, ramo, caminhoImagem, descricao, registro, cnpj };
         } else {
-            listaDeOngs.push({ nome, ramo, caminhoImagem, descricao, registro });
+            listaDeOngs.push({ nome, ramo, caminhoImagem, descricao, registro, cnpj });
         }
 
         salvarLista();
@@ -133,23 +135,23 @@ function read() {
 }
 
 function update(indice) {
-    const obj = listaDeCompras[indice];
-    document.getElementById('item').value = obj.item;
-    document.getElementById('valor').value = obj.valor;
-    document.getElementById('tipo').value = obj.tipo;
+    const obj = listaDeOngs[indice];
+    document.getElementById('nome').value = obj.nome;
+    document.getElementById('ramo').value = obj.ramo;
+    document.getElementById('imagem').value = obj.caminhoImagem;
     document.getElementById('descricao').value = obj.descricao;
-    document.getElementById('imagem').value = obj.urlImagem;
+    document.getElementById('registro').value = obj.registro;
+    document.getElementById('cnpj').value = obj.cnpj;
+    openModal();
 }
 
-function atualizarValorTotal() {
-    let valorTotal = listaDeCompras.reduce((total, item) => total + item.valor, 0);
-    document.getElementById('valor-total').textContent = `Valor Total: R$ ${valorTotal.toFixed(2)}`;
-}
 
 function excluir(indice) {
-    if (confirm(`Tem certeza que deseja excluir o item ${listaDeCompras[indice].item}?`)) {
-        listaDeCompras.splice(indice, 1);
+    if (confirm(`Tem certeza que deseja excluir a ONG ${listaDeOngs[indice].nome}?`)) {
+        listaDeOngs.splice(indice, 1);
         salvarLista();
         read();
     }
 }
+
+read();
