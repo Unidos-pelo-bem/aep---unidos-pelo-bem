@@ -97,6 +97,7 @@ function read() {
     listaDeOngs.forEach(
         (obj, indice) => {
             let tr = document.createElement('tr');
+            tr.classList.add('tr1');
             let detailsRowVisible = false;
             tr.addEventListener('click', function () {
                 var nextTr = this.nextElementSibling;
@@ -129,6 +130,8 @@ function read() {
                 <td id='btnFazerDoacao'>
                     <button class="button-doacao" onclick="" id='fazerDoacao'>Fazer Doação</button>
                 </td>
+                <br>
+                <br>
             `;
             listagem.appendChild(tr2);
         });
