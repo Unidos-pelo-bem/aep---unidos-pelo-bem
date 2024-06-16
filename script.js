@@ -2,14 +2,22 @@ function testeJava() {
     console.log('a');
 }
 
-const modal = document.getElementById('modalAdicionarItens');
+const modalONG = document.getElementById('modalAdicionarItens');
+const modalLogin = document.getElementById('modal-login');
 const buttonClose = document.getElementById("botao-fechar");
+const buttonFecharLogin = document.getElementById("botao-fechar-login");
 
 function openModal() {
-    modal.showModal()
+    modalONG.showModal()
 }
 buttonClose.onclick = function () {
-    modal.close();
+    modalONG.close();
+}
+function openLogin() {
+    modalLogin.showModal()
+}
+buttonFecharLogin.onclick = function () {
+    modalLogin.close();
 }
 
 function mostrarDetalhes(row) {

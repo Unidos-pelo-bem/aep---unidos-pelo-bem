@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="logo">Unidos pelo Bem</h1>
+    <img id="logo" src="img/LogoUpB.png" alt="Logo Unidos pelo Bem">
 
     <div id="menu">
-        <button>Cadastre-se</button><br>
+        <button onclick="openLogin()">Login</button><br>
         <h3>Filtrar ></h3><br>
         <h3>Pesquisar ></h3><br>
         <button onclick="openModal()">Adicionar ONG</button><br>
@@ -19,20 +19,49 @@
 
     </div>
 
-    <input type="search" id="search" placeholder="Pesquisar..."><br>
+    <input type="search" id="search" placeholder="Pesquisar ONG..."><br>
 
     <div id="catalogoOngs">
         <table>
             <tbody id="listagem">
+                <tr onclick="mostrarDetalhes(this)">
+                    <td colspan="3">Médicos sem fronteiras</td><br>
+                    <td colspan="3">Serviços de apoio médico</td><br>
+                    <td colspan="3">Atua em países remotos com poucas condições de saúde</td><br>
+                </tr><br><br>
+                <tr class="details-row hidden">
+                    <td colspan="3"><img src="" alt=""></td>
+                    <td colspan="3">Médico sem fronteiras</td>
+                    <td>Médicos Sem Fronteiras está entre as organizações sociais mais conhecidas no mundo,
+                        por oferecer serviços de apoio médico em diversas localidades ao redor do mundo, auxiliando populações em situação de emergência,
+                        como questões naturais, conflitos políticos, problemas sociais, entre outros.</td>
+                    <td><button>Fazer Doação</button></td>
+                </tr>
             </tbody>
         </table>
     </div>
 
+    <div class="janela-modal">
+        <div class="modal">
+            <dialog id="modal-login">
+                <div id="formHeading">
+                    <h1>Cadastre-se</h1><br>
+                </div>
+                <button id="botao-fechar-login">X</button><br><br>
+                
+                <input type="text" id="nome" placeholder="Nome"><br><br>
+                
+                <input type="text" id="ramo" placeholder="Ramo de Atuação"><br><br>
+                
+                <button onclick="limpar()">Limpar</button>
+            </dialog>
+        </div>
+    </div>
 
     <div class="janela-modal">
         <div class="modal">
-            <dialog id="modalAdicionarItens">
-                <div id="formHeading">
+            <dialog id="modal-login">
+                <div id="a">
                     <h1>Adicionar ONG ao catálogo</h1><br>
                 </div>
                 <button id="botao-fechar">X</button><br><br>
@@ -47,7 +76,7 @@
                 
                 <input type="text" id="registro" placeholder="Registro legal"><br><br>
                 
-                <input type="text" id="cnpj" placeholder="CNPJ da ONG"><br><br>
+                <input type="text" id="CNPJ" placeholder="CNPJ da ONG"><br><br>
                 <button onclick="create()">Adicionar</button>
                 <button onclick="limpar()">Limpar</button>
             </dialog>

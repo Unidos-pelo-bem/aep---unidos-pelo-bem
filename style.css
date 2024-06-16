@@ -1,5 +1,33 @@
-/*Os itens abaixo correspondem a estilização do catalogo de ONGs*/
+body {
+    background-color: rgb(43, 42, 42);
+    color: white;
+}
 
+/* Estilização dos botões */
+button, button:focus {
+    font-size: 15px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 2px solid #494949;
+    color: #494949;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #cffccf;
+    color: black;
+  }
+  
+  button:active {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+  }
+
+
+/*Os itens abaixo correspondem a estilização do catalogo de ONGs*/
 #catalogoOngs{
     position: absolute;
     left: 25%;
@@ -53,10 +81,10 @@ td{
 #logo{
     position: absolute;
     left: 78%;
-    top: -2%;
+    top: 5%;
     width: 20%;
-    height: 8%;
-    background-color: #cffccf;
+    height: 10%;
+    background-color: #cffccfb2;
     align-items: center;
     text-align: center;
     padding: 10px;
@@ -82,5 +110,9 @@ td{
     padding: 25px;
     width: 20%;
     height: 100%;
-    background-color: #cffccf;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
 }
+
+/*Os itens abaixo sao para a estilização do modal*/
