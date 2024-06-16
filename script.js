@@ -5,7 +5,7 @@ function testeJava() {
 const modalONG = document.getElementById('modalAdicionarItens');
 const modalLogin = document.getElementById('modal-login');
 const buttonClose = document.getElementById("botao-fechar");
-const buttonFecharLogin = document.getElementById("botao-fechar-login");
+
 
 function openModal() {
     modalONG.showModal()
@@ -16,9 +16,6 @@ buttonClose.onclick = function () {
 function openLogin() {
     modalLogin.showModal()
 }
-buttonFecharLogin.onclick = function () {
-    modalLogin.close();
-}
 
 function mostrarDetalhes(row) {
     var nextTr = row.nextElementSibling;
@@ -27,7 +24,6 @@ function mostrarDetalhes(row) {
         nextTr.classList.toggle('hidden');
     }
 }
-
 
 /* Inicio do CRUD */
 
