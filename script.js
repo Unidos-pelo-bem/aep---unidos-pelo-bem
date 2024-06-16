@@ -25,6 +25,7 @@ function mostrarDetalhes(row) {
     }
 }
 
+
 /* Inicio do CRUD */
 
 const listaDeOngs = JSON.parse(localStorage.getItem('listaDeOngs')) || [];
