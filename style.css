@@ -66,7 +66,7 @@ tr{
     max-width: 100%; 
 }
 td{
-    background-color: white;
+    background-color: rgb(43, 42, 42);
     border-radius: 8px;
     width: 300px;
     max-width: 300px;
@@ -116,3 +116,56 @@ td{
 }
 
 /*Os itens abaixo sao para a estilização do modal*/
+.card {
+    width: 230px;
+    height: 300px;
+    background: #F4F6FB;
+    border: 1px solid white;
+    box-shadow: 10px 10px 64px 0px rgba(180, 180, 207, 0.75);
+    -webkit-box-shadow: 10px 10px 64px 0px rgba(186, 186, 202, 0.75);
+    -moz-box-shadow: 10px 10px 64px 0px rgba(208, 208, 231, 0.75);
+  }
+  
+  .form {
+    padding: 25px;
+  }
+  
+  .card_header {
+    display: flex;
+    align-items: center;
+  }
+
+  .form_heading {
+    padding-bottom: 20px;
+    font-size: 21px;
+    color: #054605;
+  }
+  
+  .field {
+    padding-bottom: 10px;
+  }
+  
+  .input {
+    border-radius: 5px;
+    background-color: #cffccfb2;;
+    padding: 5px;
+    width: 100%;
+    color: #054605;
+    border: 1px solid #cffccfb2;
+  }
+  
+  .input:focus-visible {
+    outline: 1px solid #cffccfb2;
+  }
+  
+  .input::placeholder {
+    color: #054605;
+  }
+  
+  label {
+    color: #B2BAC8;
+    font-size: 14px;
+    display: block;
+    padding-bottom: 4px;
+  }
+  
