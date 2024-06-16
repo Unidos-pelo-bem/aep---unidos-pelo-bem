@@ -1,20 +1,53 @@
 function testeJava() {
     console.log('a');
 }
-
-const modalONG = document.getElementById('modalAdicionarItens');
+// LOGIN
 const modalLogin = document.getElementById('modal-login');
-const buttonClose = document.getElementById("botao-fechar");
 
+function openLogin() {
+    modalLogin.showModal()
+}
+
+document.getElementById('loginForm').onsubmit = function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    if (username === 'adm' && password === '1234') {
+        Swal.fire({
+            title: "Bem vindo!",
+            text: "Você entrou como administrador",
+            icon: "success"
+          });
+        modalLogin.close();
+        document.getElementById('addONG').style.display = 'block';       
+    } else {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "error",
+            title: "Usuário ou senha incorretos"
+          });
+    }
+}
+
+// MODAL CATÁLOGO
+const modalONG = document.getElementById('modalAdicionarItens');
+const buttonClose = document.getElementById("botao-fechar");
 
 function openModal() {
     modalONG.showModal()
 }
 buttonClose.onclick = function () {
     modalONG.close();
-}
-function openLogin() {
-    modalLogin.showModal()
 }
 
 function mostrarDetalhes(row) {
@@ -24,7 +57,6 @@ function mostrarDetalhes(row) {
         nextTr.classList.toggle('hidden');
     }
 }
-
 
 /* Inicio do CRUD */
 
@@ -92,6 +124,21 @@ function create() {
         salvarLista();
         limpar();
         read();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "ONG adicionada!"
+          });
     }
 }
 
@@ -152,7 +199,6 @@ function update(indice) {
     document.getElementById('cnpj').value = obj.cnpj;
     openModal();
 }
-
 
 function excluir(indice) {
     if (confirm(`Tem certeza que deseja excluir a ONG ${listaDeOngs[indice].nome}?`)) {
