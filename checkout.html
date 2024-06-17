@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout de Doação</title>
+    <link rel="stylesheet" href="styleCheckout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <div>
+            <button id="voltarBtn">Página Inicial</button>
+        </div>
+        <form id="checkoutForm">
+            <h2>Checkout de Doação</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required><br>
+            
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required><br>
+
+            <label for="endereco">Valor:</label>
+            <input type="text" id="valor" name="valor" required><br>
+            
+            <label for="metodoPagamento">Método de Pagamento:</label><br>
+            <input type="radio" id="cartao" name="metodoPagamento" value="cartao" required>
+            <label for="cartao">Cartão de Crédito</label><br>
+            <input type="radio" id="pix" name="metodoPagamento" value="pix" required>
+            <label for="pix">PIX</label><br><br>
+            
+            <!-- Campos adicionais para cartão de crédito -->
+            <div id="cartaoFields" class="hidden">
+                <label for="numeroCartao">Número do Cartão:</label>
+                <input type="text" id="numeroCartao" name="numeroCartao"><br>
+                
+                <label for="nomeTitular">Nome do Titular do Cartão:</label>
+                <input type="text" id="nomeTitular" name="nomeTitular"><br>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv"><br>
+                
+                <label for="validade">Data de Validade:</label>
+                <input type="text" id="validade" name="validade" placeholder="MM/AA"><br><br>
+                </div>
+                
+                <button type="submit">Finalizar Compra</button>
+                </form>
+                
+            <script src="scriptCheckout.js"></script>
+        </body>
+</html>
