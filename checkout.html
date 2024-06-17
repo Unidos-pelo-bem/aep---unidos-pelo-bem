@@ -12,7 +12,7 @@
     <body>
         <div>
             <button id="voltarBtn">Página Inicial</button>
-        </div>
+        </div>  
         <form id="checkoutForm">
             <h2>Checkout de Doação</h2>
             <label for="nome">Nome:</label>
@@ -27,11 +27,11 @@
             <label for="endereco">Valor:</label>
             <input type="text" id="valor" name="valor" required><br>
             
-            <label for="metodoPagamento">Método de Pagamento:</label><br>
+            <h5>Método de Pagamento:</h5>
+            <label for="cartao">Cartão de Crédito</label>
             <input type="radio" id="cartao" name="metodoPagamento" value="cartao" required>
-            <label for="cartao">Cartão de Crédito</label><br>
+            <label for="pix">PIX</label>
             <input type="radio" id="pix" name="metodoPagamento" value="pix" required>
-            <label for="pix">PIX</label><br><br>
             
             <!-- Campos adicionais para cartão de crédito -->
             <div id="cartaoFields" class="hidden">
@@ -52,5 +52,6 @@
                 </form>
                 
             <script src="scriptCheckout.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         </body>
 </html>

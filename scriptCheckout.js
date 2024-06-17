@@ -45,16 +45,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Exemplo de lógica para simular o processamento:
         if (metodoPagamento && metodoPagamento.value === 'cartao') {
-            alert(`Doação realizada com cartão de crédito:\n\nValor: ${valor}`);
+            Swal.fire({
+                title: "Bom trabalho!!",
+                text:`Doação realizada com cartão de crédito no valor: R$${valor}`,
+                icon: "success",
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: "OK"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "index.html";
+                }
+              });
         } else if (metodoPagamento && metodoPagamento.value === 'pix') {
-            alert(`Doação realizada via PIX:\n\nValor: ${valor}`);
+            Swal.fire({
+                title: "Bom trabalho!!",
+                text: `Doação realizada via PIX no valor: R$${valor}`,
+                icon: "success",
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: "OK"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "index.html";
+                }
+              });
         } else {
             alert('Selecione um método de pagamento.');
             return; // Impede o envio do formulário se o método de pagamento não estiver selecionado
         }
-
-        // Redirecionar para a página inicial após a finalização da doação
-        window.location.href = 'index.html'; // Altere o nome do arquivo conforme necessário
     });
 
     // Botão Voltar para a Página Inicial
