@@ -201,11 +201,25 @@ function update(indice) {
 }
 
 function excluir(indice) {
-    if (confirm(`Tem certeza que deseja excluir a ONG ${listaDeOngs[indice].nome}?`)) {
-        listaDeOngs.splice(indice, 1);
-        salvarLista();
-        read();
-    }
+    Swal.fire({
+        title: `Tem certeza que deseja excluir a ONG ${listaDeOngs[indice].nome}?`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim, excluir!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            listaDeOngs.splice(indice, 1);
+            salvarLista();
+            read();  
+          Swal.fire({
+            title: "Excluída!",
+            text: "ONG removida com sucesso!",
+            icon: "success"
+          });
+        }
+      });
 }
 
 read();

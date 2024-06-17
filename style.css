@@ -88,10 +88,10 @@ td{
 
 #logo{
     position: absolute;
-    left: 78%;
+    right: 3%;
     top: 5%;
-    width: 20%;
-    height: 10%;
+    width: 346px;
+    height: 81px;
     background-color: #cffccfb2;
     align-items: center;
     text-align: center;
