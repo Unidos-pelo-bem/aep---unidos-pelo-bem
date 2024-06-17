@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-h1 {
+h2 {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -16,17 +16,18 @@ h1 {
 form {
     background-color: #cffccf;
     padding: 3%;
-    margin-top: 15%;
+    margin-top: 2%;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 20%;
+    max-height: 80%;
     height: 90%;
 }
 
 form label {
-    display: block;
     margin-bottom: 5px;
+    max-height: 80%;
 }
 
 form input[type="text"],
@@ -56,16 +57,18 @@ form button {
 }
 
 form button:hover {
-    background-color: #cffccf;
+    background-color: #ddd;
     color: black;
   }
 
 #voltarBtn {
-    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
     padding: 10px;
     margin-top: 10px;
-    background-color: #ccc;
-    color: black;
+    background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -75,4 +78,8 @@ form button:hover {
 
 #voltarBtn:hover {
     background-color: #ddd;
+}
+
+.hidden {
+    display: none;
 }
